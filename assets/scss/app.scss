@@ -1,0 +1,5 @@
+@import "compass";
+
+html {
+  @include background(linear-gradient(to right, white, #dddddd));
+}
