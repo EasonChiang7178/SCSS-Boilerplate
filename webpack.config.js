@@ -30,15 +30,17 @@ module.exports = {
       {
         test: /\.(scss|sass)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: ExtractTextPlugin.extract('style-loader',
-                  'css-loader?sourceMap!sass-loader?sourceMap&includePaths[]=' +
-                  path.resolve(__dirname, './node_modules/compass-mixins/lib')),
+        loader: ExtractTextPlugin.extract(
+                  'style-loader',
+                  'css-loader?sourceMap!sass-loader?sourceMap&config=scssConfig'
+                ),
       },
     ],
   },
 
   // Options for SCSS loader
-  sassLoader: {
+  scssConfig: {
+    includePaths: path.resolve(__dirname, './node_modules/compass-mixins/lib'),
     importer: importOnce,
     importOnce: {
       index: true,
