@@ -11,6 +11,8 @@ module.exports = {
     filename: 'bundle.js',
   },
 
+  devtool: 'source-map',
+
   module: {
     loaders: [
       /* ----- JavaScript Loader ----- */
@@ -28,7 +30,7 @@ module.exports = {
         test: /\.(scss|sass)$/,
         exclude: /(node_modules|bower_components)/,
         loader: ExtractTextPlugin.extract('style-loader',
-                  'css-loader!sass-loader?includePaths[]=' +
+                  'css-loader?sourceMap!sass-loader?sourceMap&includePaths[]=' +
                   path.resolve(__dirname, './node_modules/compass-mixins/lib')),
       },
     ],
