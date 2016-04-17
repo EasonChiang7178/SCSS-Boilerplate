@@ -38,14 +38,14 @@ module.exports = {
   },
 
   // Options for SCSS loader
-  // sassLoader: {
-  //   importer: importOnce,
-  //   importOnce: {
-  //     index: true,
-  //     css: true,
-  //     bower: false,
-  //   }
-  // },
+  sassLoader: {
+    importer: importOnce,
+    importOnce: {
+      index: true,
+      css: true,
+      bower: false,
+    }
+  },
 
   plugins: [
     new ExtractTextPlugin('./[name].css'),
