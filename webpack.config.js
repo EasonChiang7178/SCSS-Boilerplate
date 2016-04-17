@@ -1,5 +1,6 @@
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
+    importOnce = require('node-sass-import-once');
 
 module.exports = {
   entry: {
@@ -35,6 +36,17 @@ module.exports = {
       },
     ],
   },
+
+  // Options for SCSS loader
+  // sassLoader: {
+  //   importer: importOnce,
+  //   importOnce: {
+  //     index: true,
+  //     css: true,
+  //     bower: false,
+  //   }
+  // },
+
   plugins: [
     new ExtractTextPlugin('./[name].css'),
   ],
